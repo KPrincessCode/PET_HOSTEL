@@ -37,12 +37,12 @@ namespace PET_HOSTEL
             this.text_Card = new System.Windows.Forms.TextBox();
             this.txt_Username = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.text_Amount = new System.Windows.Forms.TextBox();
             this.button_Print = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,7 @@ namespace PET_HOSTEL
             this.btn_Confirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirm.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Confirm.ForeColor = System.Drawing.Color.White;
-            this.btn_Confirm.Location = new System.Drawing.Point(123, 349);
+            this.btn_Confirm.Location = new System.Drawing.Point(126, 357);
             this.btn_Confirm.Name = "btn_Confirm";
             this.btn_Confirm.Size = new System.Drawing.Size(312, 36);
             this.btn_Confirm.TabIndex = 15;
@@ -64,18 +64,18 @@ namespace PET_HOSTEL
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(123, 291);
+            this.label3.Location = new System.Drawing.Point(126, 299);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 16);
+            this.label3.Size = new System.Drawing.Size(32, 17);
             this.label3.TabIndex = 14;
             this.label3.Text = "Pin:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(123, 236);
+            this.label2.Location = new System.Drawing.Point(126, 244);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 16);
+            this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 13;
             this.label2.Text = "Card Number:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -83,9 +83,9 @@ namespace PET_HOSTEL
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(123, 118);
+            this.label1.Location = new System.Drawing.Point(126, 126);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
+            this.label1.Size = new System.Drawing.Size(77, 17);
             this.label1.TabIndex = 12;
             this.label1.Text = "Username:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -93,7 +93,7 @@ namespace PET_HOSTEL
             // text_Pin
             // 
             this.text_Pin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.text_Pin.Location = new System.Drawing.Point(123, 311);
+            this.text_Pin.Location = new System.Drawing.Point(126, 319);
             this.text_Pin.Name = "text_Pin";
             this.text_Pin.Size = new System.Drawing.Size(312, 22);
             this.text_Pin.TabIndex = 11;
@@ -102,7 +102,7 @@ namespace PET_HOSTEL
             // text_Card
             // 
             this.text_Card.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.text_Card.Location = new System.Drawing.Point(123, 256);
+            this.text_Card.Location = new System.Drawing.Point(126, 264);
             this.text_Card.Name = "text_Card";
             this.text_Card.Size = new System.Drawing.Size(312, 22);
             this.text_Card.TabIndex = 10;
@@ -111,7 +111,7 @@ namespace PET_HOSTEL
             // txt_Username
             // 
             this.txt_Username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txt_Username.Location = new System.Drawing.Point(123, 138);
+            this.txt_Username.Location = new System.Drawing.Point(126, 146);
             this.txt_Username.Name = "txt_Username";
             this.txt_Username.Size = new System.Drawing.Size(312, 22);
             this.txt_Username.TabIndex = 9;
@@ -128,6 +128,17 @@ namespace PET_HOSTEL
             this.panel1.Size = new System.Drawing.Size(690, 108);
             this.panel1.TabIndex = 8;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PET_HOSTEL.Properties.Resources.close;
+            this.pictureBox1.Location = new System.Drawing.Point(652, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(38, 42);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -141,16 +152,16 @@ namespace PET_HOSTEL
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(123, 175);
+            this.label5.Location = new System.Drawing.Point(126, 183);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 16);
+            this.label5.Size = new System.Drawing.Size(60, 17);
             this.label5.TabIndex = 17;
             this.label5.Text = "Amount:";
             // 
             // text_Amount
             // 
             this.text_Amount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.text_Amount.Location = new System.Drawing.Point(123, 195);
+            this.text_Amount.Location = new System.Drawing.Point(126, 203);
             this.text_Amount.Name = "text_Amount";
             this.text_Amount.Size = new System.Drawing.Size(312, 22);
             this.text_Amount.TabIndex = 16;
@@ -162,7 +173,7 @@ namespace PET_HOSTEL
             this.button_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Print.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Print.ForeColor = System.Drawing.Color.White;
-            this.button_Print.Location = new System.Drawing.Point(531, 128);
+            this.button_Print.Location = new System.Drawing.Point(532, 144);
             this.button_Print.Name = "button_Print";
             this.button_Print.Size = new System.Drawing.Size(133, 36);
             this.button_Print.TabIndex = 18;
@@ -174,23 +185,12 @@ namespace PET_HOSTEL
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label6.Location = new System.Drawing.Point(540, 167);
+            this.label6.Location = new System.Drawing.Point(541, 183);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(113, 32);
+            this.label6.Size = new System.Drawing.Size(124, 34);
             this.label6.TabIndex = 19;
             this.label6.Text = "Print receipt to get\r\nyour token";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PET_HOSTEL.Properties.Resources.close;
-            this.pictureBox1.Location = new System.Drawing.Point(652, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(38, 42);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // CardPayment
             // 

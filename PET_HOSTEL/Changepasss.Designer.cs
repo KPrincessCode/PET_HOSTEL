@@ -43,9 +43,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(119, 175);
+            this.label1.Location = new System.Drawing.Point(106, 140);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 25);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "New Password";
             // 
@@ -53,39 +53,42 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 239);
+            this.label2.Location = new System.Drawing.Point(82, 191);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(169, 25);
+            this.label2.Size = new System.Drawing.Size(145, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Confirm password";
             // 
             // npass
             // 
-            this.npass.Location = new System.Drawing.Point(296, 164);
+            this.npass.Location = new System.Drawing.Point(263, 131);
+            this.npass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.npass.Multiline = true;
             this.npass.Name = "npass";
             this.npass.PasswordChar = '*';
-            this.npass.Size = new System.Drawing.Size(311, 36);
+            this.npass.Size = new System.Drawing.Size(277, 30);
             this.npass.TabIndex = 2;
             this.npass.TextChanged += new System.EventHandler(this.npass_TextChanged);
             // 
             // cpass
             // 
-            this.cpass.Location = new System.Drawing.Point(296, 239);
+            this.cpass.Location = new System.Drawing.Point(263, 191);
+            this.cpass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cpass.Multiline = true;
             this.cpass.Name = "cpass";
             this.cpass.PasswordChar = '*';
-            this.cpass.Size = new System.Drawing.Size(310, 34);
+            this.cpass.Size = new System.Drawing.Size(276, 28);
             this.cpass.TabIndex = 3;
             // 
             // updt
             // 
             this.updt.BackColor = System.Drawing.Color.Turquoise;
             this.updt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updt.ForeColor = System.Drawing.Color.Transparent;
-            this.updt.Location = new System.Drawing.Point(441, 346);
+            this.updt.ForeColor = System.Drawing.Color.Black;
+            this.updt.Location = new System.Drawing.Point(389, 280);
+            this.updt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updt.Name = "updt";
-            this.updt.Size = new System.Drawing.Size(165, 47);
+            this.updt.Size = new System.Drawing.Size(147, 38);
             this.updt.TabIndex = 4;
             this.updt.Text = "Update";
             this.updt.UseVisualStyleBackColor = false;
@@ -94,9 +97,10 @@
             // sp
             // 
             this.sp.AutoSize = true;
-            this.sp.Location = new System.Drawing.Point(458, 292);
+            this.sp.Location = new System.Drawing.Point(407, 234);
+            this.sp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sp.Name = "sp";
-            this.sp.Size = new System.Drawing.Size(148, 24);
+            this.sp.Size = new System.Drawing.Size(129, 21);
             this.sp.TabIndex = 5;
             this.sp.Text = "Show Password";
             this.sp.UseVisualStyleBackColor = true;
@@ -108,25 +112,26 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(799, 70);
+            this.panel1.Size = new System.Drawing.Size(710, 56);
             this.panel1.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(275, 25);
+            this.label3.Location = new System.Drawing.Point(244, 20);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(260, 32);
+            this.label3.Size = new System.Drawing.Size(225, 29);
             this.label3.TabIndex = 0;
             this.label3.Text = "Change Password";
             // 
             // Changepasss
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(711, 360);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sp);
             this.Controls.Add(this.updt);
@@ -135,6 +140,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Changepasss";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Changepasss";

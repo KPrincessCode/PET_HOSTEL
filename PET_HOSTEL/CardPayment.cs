@@ -78,7 +78,7 @@ namespace PET_HOSTEL
                     updateCmd.Parameters.AddWithValue("@username", txt_Username.Text);
                     updateCmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Payment confirmed successfully and status updated to 'Paid'.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Payment confirmed successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     isPaymentConfirmed = true;
                 }
                 else
@@ -240,7 +240,7 @@ namespace PET_HOSTEL
             }
             catch (Exception ex)
             {
-                MessageBox.Show("print sucess: ", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Printed successfully: ", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {

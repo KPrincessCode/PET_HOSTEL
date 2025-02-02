@@ -45,6 +45,8 @@ namespace PET_HOSTEL
             this.signup_btn = new System.Windows.Forms.Button();
             this.btn_Refresh = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.catcostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dogcostDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -75,8 +77,16 @@ namespace PET_HOSTEL
             this.loginstatusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.petHostel_DatabaseDataSet = new PET_HOSTEL.PetHostel_DatabaseDataSet();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.adminBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button_UpdateCost = new System.Windows.Forms.Button();
+            this.textBox_Cost = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox_petType = new System.Windows.Forms.ComboBox();
             this.btn_Uptate = new System.Windows.Forms.Button();
             this.txt_usertype = new System.Windows.Forms.TextBox();
             this.signup_password = new System.Windows.Forms.TextBox();
@@ -84,16 +94,10 @@ namespace PET_HOSTEL
             this.signup_dob = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_UpdateCost = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox_Cost = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox_petType = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.Back = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.loginDataaDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adminBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.adminBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
@@ -101,10 +105,6 @@ namespace PET_HOSTEL
             this.adminBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.adminTableAdapter = new PET_HOSTEL.PetHostel_DatabaseDataSetTableAdapters.adminTableAdapter();
             this.costTableAdapter = new PET_HOSTEL.PetHostel_DatabaseDataSet1TableAdapters.costTableAdapter();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.costBindingSource)).BeginInit();
@@ -112,18 +112,18 @@ namespace PET_HOSTEL
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.petHostel_DatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource4)).BeginInit();
             this.panel4.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginDataaDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource1)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -155,7 +155,7 @@ namespace PET_HOSTEL
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label3.Location = new System.Drawing.Point(295, 22);
+            this.label3.Location = new System.Drawing.Point(286, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 18);
             this.label3.TabIndex = 30;
@@ -165,7 +165,7 @@ namespace PET_HOSTEL
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label5.Location = new System.Drawing.Point(295, 97);
+            this.label5.Location = new System.Drawing.Point(286, 97);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 18);
             this.label5.TabIndex = 37;
@@ -178,7 +178,7 @@ namespace PET_HOSTEL
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(385, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(222, 39);
+            this.label4.Size = new System.Drawing.Size(212, 38);
             this.label4.TabIndex = 44;
             this.label4.Text = "Admin Panel";
             // 
@@ -186,7 +186,7 @@ namespace PET_HOSTEL
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F);
-            this.label2.Location = new System.Drawing.Point(295, 60);
+            this.label2.Location = new System.Drawing.Point(286, 60);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 18);
             this.label2.TabIndex = 28;
@@ -196,7 +196,7 @@ namespace PET_HOSTEL
             // 
             this.signup_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.signup_email.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signup_email.Location = new System.Drawing.Point(392, 58);
+            this.signup_email.Location = new System.Drawing.Point(397, 60);
             this.signup_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.signup_email.Multiline = true;
             this.signup_email.Name = "signup_email";
@@ -254,7 +254,7 @@ namespace PET_HOSTEL
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.Color.White;
-            this.btn_Delete.Location = new System.Drawing.Point(547, 145);
+            this.btn_Delete.Location = new System.Drawing.Point(527, 145);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Delete.Name = "btn_Delete";
             this.btn_Delete.Size = new System.Drawing.Size(80, 28);
@@ -272,7 +272,7 @@ namespace PET_HOSTEL
             this.signup_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signup_btn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_btn.ForeColor = System.Drawing.Color.White;
-            this.signup_btn.Location = new System.Drawing.Point(650, 145);
+            this.signup_btn.Location = new System.Drawing.Point(630, 145);
             this.signup_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.signup_btn.Name = "signup_btn";
             this.signup_btn.Size = new System.Drawing.Size(80, 28);
@@ -290,7 +290,7 @@ namespace PET_HOSTEL
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(746, 145);
+            this.btn_Refresh.Location = new System.Drawing.Point(726, 145);
             this.btn_Refresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Refresh.Name = "btn_Refresh";
             this.btn_Refresh.Size = new System.Drawing.Size(80, 28);
@@ -317,6 +317,38 @@ namespace PET_HOSTEL
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(942, 454);
             this.panel3.TabIndex = 46;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.button1.Image = global::PET_HOSTEL.Properties.Resources.icons8_multiply_16;
+            this.button1.Location = new System.Drawing.Point(917, -1);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(24, 18);
+            this.button1.TabIndex = 46;
+            this.button1.Text = " ";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Black;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Location = new System.Drawing.Point(26, 302);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(134, 24);
+            this.label10.TabIndex = 47;
+            this.label10.Text = "Pet Cost Data";
             // 
             // dataGridView2
             // 
@@ -587,6 +619,18 @@ namespace PET_HOSTEL
             this.petHostel_DatabaseDataSet.DataSetName = "PetHostel_DatabaseDataSet";
             this.petHostel_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Black;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(533, 74);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(29, 30);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 41;
+            this.pictureBox2.TabStop = false;
+            // 
             // adminBindingSource4
             // 
             this.adminBindingSource4.DataMember = "admin";
@@ -618,6 +662,107 @@ namespace PET_HOSTEL
             this.panel4.Size = new System.Drawing.Size(942, 204);
             this.panel4.TabIndex = 47;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.button_UpdateCost);
+            this.panel2.Controls.Add(this.textBox_Cost);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.comboBox_petType);
+            this.panel2.Location = new System.Drawing.Point(20, 18);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(260, 172);
+            this.panel2.TabIndex = 44;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(39, 5);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(175, 24);
+            this.label13.TabIndex = 48;
+            this.label13.Text = "Update Cost Here";
+            // 
+            // button_UpdateCost
+            // 
+            this.button_UpdateCost.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.button_UpdateCost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_UpdateCost.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(158)))), ((int)(((byte)(210)))));
+            this.button_UpdateCost.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(158)))), ((int)(((byte)(210)))));
+            this.button_UpdateCost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_UpdateCost.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_UpdateCost.ForeColor = System.Drawing.Color.White;
+            this.button_UpdateCost.Location = new System.Drawing.Point(9, 127);
+            this.button_UpdateCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button_UpdateCost.Name = "button_UpdateCost";
+            this.button_UpdateCost.Size = new System.Drawing.Size(244, 28);
+            this.button_UpdateCost.TabIndex = 71;
+            this.button_UpdateCost.Text = "Update Cost";
+            this.button_UpdateCost.UseVisualStyleBackColor = false;
+            this.button_UpdateCost.Click += new System.EventHandler(this.button_UpdateCost_Click);
+            // 
+            // textBox_Cost
+            // 
+            this.textBox_Cost.BackColor = System.Drawing.Color.White;
+            this.textBox_Cost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_Cost.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.textBox_Cost.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Cost.ForeColor = System.Drawing.Color.Black;
+            this.textBox_Cost.Location = new System.Drawing.Point(98, 82);
+            this.textBox_Cost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_Cost.Multiline = true;
+            this.textBox_Cost.Name = "textBox_Cost";
+            this.textBox_Cost.Size = new System.Drawing.Size(155, 28);
+            this.textBox_Cost.TabIndex = 69;
+            this.textBox_Cost.TextChanged += new System.EventHandler(this.textBox_Cost_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(5, 51);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(87, 21);
+            this.label12.TabIndex = 68;
+            this.label12.Text = "Pet Type:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(6, 84);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 21);
+            this.label11.TabIndex = 70;
+            this.label11.Text = "Cost:";
+            // 
+            // comboBox_petType
+            // 
+            this.comboBox_petType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_petType.FormattingEnabled = true;
+            this.comboBox_petType.Items.AddRange(new object[] {
+            "Cat",
+            "Dog",
+            "Rabbit",
+            "Tortoise",
+            "Hamster",
+            "Bird",
+            "Fish"});
+            this.comboBox_petType.Location = new System.Drawing.Point(98, 47);
+            this.comboBox_petType.Name = "comboBox_petType";
+            this.comboBox_petType.Size = new System.Drawing.Size(155, 28);
+            this.comboBox_petType.TabIndex = 67;
+            this.comboBox_petType.SelectedIndexChanged += new System.EventHandler(this.comboBox_petType_SelectedIndexChanged);
+            // 
             // btn_Uptate
             // 
             this.btn_Uptate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
@@ -627,7 +772,7 @@ namespace PET_HOSTEL
             this.btn_Uptate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Uptate.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Uptate.ForeColor = System.Drawing.Color.White;
-            this.btn_Uptate.Location = new System.Drawing.Point(446, 145);
+            this.btn_Uptate.Location = new System.Drawing.Point(426, 145);
             this.btn_Uptate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Uptate.Name = "btn_Uptate";
             this.btn_Uptate.Size = new System.Drawing.Size(80, 28);
@@ -665,7 +810,7 @@ namespace PET_HOSTEL
             // 
             this.signup_username.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.signup_username.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signup_username.Location = new System.Drawing.Point(392, 22);
+            this.signup_username.Location = new System.Drawing.Point(397, 22);
             this.signup_username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.signup_username.Multiline = true;
             this.signup_username.Name = "signup_username";
@@ -676,7 +821,7 @@ namespace PET_HOSTEL
             // signup_dob
             // 
             this.signup_dob.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.signup_dob.Location = new System.Drawing.Point(392, 93);
+            this.signup_dob.Location = new System.Drawing.Point(397, 94);
             this.signup_dob.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.signup_dob.Name = "signup_dob";
             this.signup_dob.Size = new System.Drawing.Size(205, 22);
@@ -706,80 +851,16 @@ namespace PET_HOSTEL
             this.panel1.Size = new System.Drawing.Size(217, 655);
             this.panel1.TabIndex = 44;
             // 
-            // button_UpdateCost
+            // label9
             // 
-            this.button_UpdateCost.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button_UpdateCost.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_UpdateCost.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(158)))), ((int)(((byte)(210)))));
-            this.button_UpdateCost.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(158)))), ((int)(((byte)(210)))));
-            this.button_UpdateCost.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_UpdateCost.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_UpdateCost.ForeColor = System.Drawing.Color.White;
-            this.button_UpdateCost.Location = new System.Drawing.Point(9, 127);
-            this.button_UpdateCost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button_UpdateCost.Name = "button_UpdateCost";
-            this.button_UpdateCost.Size = new System.Drawing.Size(244, 28);
-            this.button_UpdateCost.TabIndex = 71;
-            this.button_UpdateCost.Text = "Update Cost";
-            this.button_UpdateCost.UseVisualStyleBackColor = false;
-            this.button_UpdateCost.Click += new System.EventHandler(this.button_UpdateCost_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(6, 84);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 21);
-            this.label11.TabIndex = 70;
-            this.label11.Text = "Cost:";
-            // 
-            // textBox_Cost
-            // 
-            this.textBox_Cost.BackColor = System.Drawing.Color.White;
-            this.textBox_Cost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox_Cost.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox_Cost.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Cost.ForeColor = System.Drawing.Color.Black;
-            this.textBox_Cost.Location = new System.Drawing.Point(98, 82);
-            this.textBox_Cost.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox_Cost.Multiline = true;
-            this.textBox_Cost.Name = "textBox_Cost";
-            this.textBox_Cost.Size = new System.Drawing.Size(155, 28);
-            this.textBox_Cost.TabIndex = 69;
-            this.textBox_Cost.TextChanged += new System.EventHandler(this.textBox_Cost_TextChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(5, 51);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 21);
-            this.label12.TabIndex = 68;
-            this.label12.Text = "Pet Type:";
-            // 
-            // comboBox_petType
-            // 
-            this.comboBox_petType.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_petType.FormattingEnabled = true;
-            this.comboBox_petType.Items.AddRange(new object[] {
-            "Cat",
-            "Dog",
-            "Rabbit",
-            "Tortoise",
-            "Hamster",
-            "Bird",
-            "Fish"});
-            this.comboBox_petType.Location = new System.Drawing.Point(98, 47);
-            this.comboBox_petType.Name = "comboBox_petType";
-            this.comboBox_petType.Size = new System.Drawing.Size(155, 28);
-            this.comboBox_petType.TabIndex = 67;
-            this.comboBox_petType.SelectedIndexChanged += new System.EventHandler(this.comboBox_petType_SelectedIndexChanged);
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(54, 354);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(94, 29);
+            this.label9.TabIndex = 46;
+            this.label9.Text = "ADMIN";
             // 
             // Back
             // 
@@ -820,38 +901,6 @@ namespace PET_HOSTEL
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Black;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(533, 74);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(29, 30);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 41;
-            this.pictureBox2.TabStop = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.button1.Image = global::PET_HOSTEL.Properties.Resources.icons8_multiply_16;
-            this.button1.Location = new System.Drawing.Point(917, -1);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 18);
-            this.button1.TabIndex = 46;
-            this.button1.Text = " ";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
             // adminBindingSource
             // 
             this.adminBindingSource.DataMember = "admin";
@@ -876,55 +925,6 @@ namespace PET_HOSTEL
             // 
             this.costTableAdapter.ClearBeforeFill = true;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.panel2.Controls.Add(this.label13);
-            this.panel2.Controls.Add(this.button_UpdateCost);
-            this.panel2.Controls.Add(this.textBox_Cost);
-            this.panel2.Controls.Add(this.label12);
-            this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.comboBox_petType);
-            this.panel2.Location = new System.Drawing.Point(20, 18);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(260, 172);
-            this.panel2.TabIndex = 44;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Black;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(26, 302);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 24);
-            this.label10.TabIndex = 47;
-            this.label10.Text = "Pet Cost Data";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(39, 5);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(175, 24);
-            this.label13.TabIndex = 48;
-            this.label13.Text = "Update Cost Here";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(54, 354);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 29);
-            this.label9.TabIndex = 46;
-            this.label9.Text = "ADMIN";
-            // 
             // AdminPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -947,21 +947,21 @@ namespace PET_HOSTEL
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.petHostel_DatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource4)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loginDataaDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.adminBindingSource1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
