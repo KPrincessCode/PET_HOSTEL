@@ -99,11 +99,11 @@ namespace PET_HOSTEL
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft YaHei", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.Color.Maroon;
-            this.btnClose.Location = new System.Drawing.Point(1109, 0);
+            this.btnClose.ForeColor = System.Drawing.Color.Black;
+            this.btnClose.Location = new System.Drawing.Point(1125, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(56, 31);
+            this.btnClose.Size = new System.Drawing.Size(40, 31);
             this.btnClose.TabIndex = 17;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;

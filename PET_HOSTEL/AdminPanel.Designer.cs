@@ -174,11 +174,11 @@ namespace PET_HOSTEL
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(385, 8);
+            this.label4.Location = new System.Drawing.Point(382, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(212, 38);
+            this.label4.Size = new System.Drawing.Size(225, 40);
             this.label4.TabIndex = 44;
             this.label4.Text = "Admin Panel";
             // 
@@ -320,19 +320,19 @@ namespace PET_HOSTEL
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Font = new System.Drawing.Font("Microsoft JhengHei", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.button1.Image = global::PET_HOSTEL.Properties.Resources.icons8_multiply_16;
-            this.button1.Location = new System.Drawing.Point(917, -1);
+            this.button1.Location = new System.Drawing.Point(907, -1);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(24, 18);
+            this.button1.Size = new System.Drawing.Size(34, 32);
             this.button1.TabIndex = 46;
             this.button1.Text = " ";
             this.button1.UseVisualStyleBackColor = false;
@@ -854,11 +854,11 @@ namespace PET_HOSTEL
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(54, 354);
+            this.label9.Location = new System.Drawing.Point(52, 331);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 29);
+            this.label9.Size = new System.Drawing.Size(94, 28);
             this.label9.TabIndex = 46;
             this.label9.Text = "ADMIN";
             // 
@@ -893,7 +893,7 @@ namespace PET_HOSTEL
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(25, 188);
+            this.pictureBox1.Location = new System.Drawing.Point(25, 165);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(158, 162);
