@@ -163,7 +163,6 @@ namespace PET_HOSTEL
                     Random random = new Random();
                     string tokenCode = "PAS" + random.Next(1000, 9999);
 
-            
                     string printDetails = $"Username: {username}\n" +
                                           $"Pet type: {petType}\n" +
                                           $"Injection Status: {injectionStatus}\n" +
@@ -174,7 +173,7 @@ namespace PET_HOSTEL
                                           $"Token Code: {tokenCode}";
 
                     PrintDialog printDialog = new PrintDialog();
-                    if (printDialog.ShowDialog() == DialogResult.OK)
+                    if (printDialog.ShowDialog() == DialogResult.OK) 
                     {
                         PrintDocument pd = new PrintDocument();
                         pd.PrintPage += (s, ev) =>
@@ -182,39 +181,43 @@ namespace PET_HOSTEL
                             ev.Graphics.DrawString(printDetails, new Font("Arial", 12), Brushes.Black, 10, 10);
                         };
                         pd.Print();
-                    }
 
-                    string pdfDirectory = @"C:\Receipts\";
-                    if (!Directory.Exists(pdfDirectory))
+                        string pdfDirectory = @"C:\Receipts\";
+                        if (!Directory.Exists(pdfDirectory))
+                        {
+                            Directory.CreateDirectory(pdfDirectory);
+                        }
+
+                        string pdfPath = Path.Combine(pdfDirectory, $"{username}'s pet {petType}_PaymentReceipt.pdf");
+                        using (PdfWriter writer = new PdfWriter(pdfPath))
+                        using (PdfDocument pdf = new PdfDocument(writer))
+                        {
+                            Document document = new Document(pdf);
+                            document.Add(new Paragraph(printDetails).SetFontSize(12));
+                            document.Close();
+                        }
+
+                        MessageBox.Show($"Receipt saved to {pdfPath}", "Receipt Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Welcome WForm1 = new Welcome();
+                        WForm1.Show();
+                        this.Hide();
+                    }
+                    else
                     {
-                        Directory.CreateDirectory(pdfDirectory);
+                        MessageBox.Show("Printing cancelled.", "Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    string pdfPath = Path.Combine(pdfDirectory, $"{username}'s pet {petType}_PaymentReceipt.pdf");
-                    using (PdfWriter writer = new PdfWriter(pdfPath))
-                    using (PdfDocument pdf = new PdfDocument(writer))
-                    {
-                        Document document = new Document(pdf);
-                        document.Add(new Paragraph(printDetails).SetFontSize(12));
-                        document.Close();
-                    }
-
-                    MessageBox.Show($"Receipt saved to {pdfPath}", "Receipt Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    Welcome WForm1 = new Welcome();
-                    WForm1.Show();
-                    this.Hide();
+                    reader.Close();
                 }
                 else
                 {
                     MessageBox.Show("User details not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                reader.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Printed successfully: " , "Sucess", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Printed successfully.", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             finally
             {
