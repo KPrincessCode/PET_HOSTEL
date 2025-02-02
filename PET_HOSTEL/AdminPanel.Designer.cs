@@ -290,10 +290,10 @@ namespace PET_HOSTEL
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(829, 82);
+            this.btn_Refresh.Location = new System.Drawing.Point(829, 74);
             this.btn_Refresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(80, 26);
+            this.btn_Refresh.Size = new System.Drawing.Size(80, 30);
             this.btn_Refresh.TabIndex = 38;
             this.btn_Refresh.Text = "Refresh";
             this.btn_Refresh.UseVisualStyleBackColor = false;
@@ -347,7 +347,7 @@ namespace PET_HOSTEL
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(26, 302);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(134, 24);
+            this.label10.Size = new System.Drawing.Size(135, 22);
             this.label10.TabIndex = 47;
             this.label10.Text = "Pet Cost Data";
             // 
@@ -446,7 +446,7 @@ namespace PET_HOSTEL
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(26, 84);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(207, 24);
+            this.label7.Size = new System.Drawing.Size(200, 22);
             this.label7.TabIndex = 45;
             this.label7.Text = "Admin and User Data";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -684,7 +684,7 @@ namespace PET_HOSTEL
             this.label13.ForeColor = System.Drawing.Color.Black;
             this.label13.Location = new System.Drawing.Point(39, 5);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(175, 24);
+            this.label13.Size = new System.Drawing.Size(170, 22);
             this.label13.TabIndex = 48;
             this.label13.Text = "Update Cost Here";
             // 
@@ -858,7 +858,7 @@ namespace PET_HOSTEL
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(52, 331);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(94, 28);
+            this.label9.Size = new System.Drawing.Size(89, 27);
             this.label9.TabIndex = 46;
             this.label9.Text = "ADMIN";
             // 
