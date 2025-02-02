@@ -178,7 +178,7 @@ namespace PET_HOSTEL
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(382, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(225, 40);
+            this.label4.Size = new System.Drawing.Size(220, 39);
             this.label4.TabIndex = 44;
             this.label4.Text = "Admin Panel";
             // 
@@ -210,7 +210,7 @@ namespace PET_HOSTEL
             this.txt_UsernameSearch.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txt_UsernameSearch.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_UsernameSearch.ForeColor = System.Drawing.Color.Black;
-            this.txt_UsernameSearch.Location = new System.Drawing.Point(568, 74);
+            this.txt_UsernameSearch.Location = new System.Drawing.Point(325, 74);
             this.txt_UsernameSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txt_UsernameSearch.Multiline = true;
             this.txt_UsernameSearch.Name = "txt_UsernameSearch";
@@ -226,7 +226,7 @@ namespace PET_HOSTEL
             this.btn_Show.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Show.Font = new System.Drawing.Font("Tahoma", 9F);
             this.btn_Show.ForeColor = System.Drawing.Color.White;
-            this.btn_Show.Location = new System.Drawing.Point(746, 74);
+            this.btn_Show.Location = new System.Drawing.Point(503, 74);
             this.btn_Show.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Show.Name = "btn_Show";
             this.btn_Show.Size = new System.Drawing.Size(172, 30);
@@ -254,10 +254,10 @@ namespace PET_HOSTEL
             this.btn_Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Delete.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Delete.ForeColor = System.Drawing.Color.White;
-            this.btn_Delete.Location = new System.Drawing.Point(527, 145);
+            this.btn_Delete.Location = new System.Drawing.Point(733, 145);
             this.btn_Delete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(80, 28);
+            this.btn_Delete.Size = new System.Drawing.Size(118, 28);
             this.btn_Delete.TabIndex = 37;
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.UseVisualStyleBackColor = false;
@@ -272,10 +272,10 @@ namespace PET_HOSTEL
             this.signup_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signup_btn.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signup_btn.ForeColor = System.Drawing.Color.White;
-            this.signup_btn.Location = new System.Drawing.Point(630, 145);
+            this.signup_btn.Location = new System.Drawing.Point(379, 145);
             this.signup_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.signup_btn.Name = "signup_btn";
-            this.signup_btn.Size = new System.Drawing.Size(80, 28);
+            this.signup_btn.Size = new System.Drawing.Size(118, 28);
             this.signup_btn.TabIndex = 39;
             this.signup_btn.Text = "Add";
             this.signup_btn.UseVisualStyleBackColor = false;
@@ -290,10 +290,10 @@ namespace PET_HOSTEL
             this.btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Refresh.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Refresh.ForeColor = System.Drawing.Color.White;
-            this.btn_Refresh.Location = new System.Drawing.Point(726, 145);
+            this.btn_Refresh.Location = new System.Drawing.Point(829, 82);
             this.btn_Refresh.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(80, 28);
+            this.btn_Refresh.Size = new System.Drawing.Size(80, 26);
             this.btn_Refresh.TabIndex = 38;
             this.btn_Refresh.Text = "Refresh";
             this.btn_Refresh.UseVisualStyleBackColor = false;
@@ -311,6 +311,7 @@ namespace PET_HOSTEL
             this.panel3.Controls.Add(this.txt_UsernameSearch);
             this.panel3.Controls.Add(this.btn_Show);
             this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.btn_Refresh);
             this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Location = new System.Drawing.Point(223, 0);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -623,7 +624,7 @@ namespace PET_HOSTEL
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Black;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(533, 74);
+            this.pictureBox2.Location = new System.Drawing.Point(290, 74);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(29, 30);
@@ -647,7 +648,6 @@ namespace PET_HOSTEL
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.signup_btn);
-            this.panel4.Controls.Add(this.btn_Refresh);
             this.panel4.Controls.Add(this.signup_showPass);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label5);
@@ -772,10 +772,10 @@ namespace PET_HOSTEL
             this.btn_Uptate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Uptate.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Uptate.ForeColor = System.Drawing.Color.White;
-            this.btn_Uptate.Location = new System.Drawing.Point(426, 145);
+            this.btn_Uptate.Location = new System.Drawing.Point(557, 145);
             this.btn_Uptate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_Uptate.Name = "btn_Uptate";
-            this.btn_Uptate.Size = new System.Drawing.Size(80, 28);
+            this.btn_Uptate.Size = new System.Drawing.Size(118, 28);
             this.btn_Uptate.TabIndex = 43;
             this.btn_Uptate.Text = "Update";
             this.btn_Uptate.UseVisualStyleBackColor = false;

@@ -36,6 +36,7 @@
             this.sp = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.close = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +62,7 @@
             // 
             // npass
             // 
+            this.npass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.npass.Location = new System.Drawing.Point(263, 131);
             this.npass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.npass.Multiline = true;
@@ -72,6 +74,7 @@
             // 
             // cpass
             // 
+            this.cpass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.cpass.Location = new System.Drawing.Point(263, 191);
             this.cpass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cpass.Multiline = true;
@@ -82,13 +85,14 @@
             // 
             // updt
             // 
-            this.updt.BackColor = System.Drawing.Color.Turquoise;
+            this.updt.BackColor = System.Drawing.Color.DarkSlateGray;
             this.updt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.updt.ForeColor = System.Drawing.Color.Black;
-            this.updt.Location = new System.Drawing.Point(389, 280);
+            this.updt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.updt.ForeColor = System.Drawing.Color.White;
+            this.updt.Location = new System.Drawing.Point(411, 269);
             this.updt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.updt.Name = "updt";
-            this.updt.Size = new System.Drawing.Size(147, 38);
+            this.updt.Size = new System.Drawing.Size(128, 38);
             this.updt.TabIndex = 4;
             this.updt.Text = "Update";
             this.updt.UseVisualStyleBackColor = false;
@@ -97,7 +101,7 @@
             // sp
             // 
             this.sp.AutoSize = true;
-            this.sp.Location = new System.Drawing.Point(407, 234);
+            this.sp.Location = new System.Drawing.Point(411, 223);
             this.sp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sp.Name = "sp";
             this.sp.Size = new System.Drawing.Size(129, 21);
@@ -109,6 +113,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.close);
             this.panel1.Controls.Add(this.label3);
             this.panel1.ForeColor = System.Drawing.Color.Transparent;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -126,6 +131,20 @@
             this.label3.Size = new System.Drawing.Size(225, 29);
             this.label3.TabIndex = 0;
             this.label3.Text = "Change Password";
+            // 
+            // close
+            // 
+            this.close.AutoSize = true;
+            this.close.BackColor = System.Drawing.Color.White;
+            this.close.CausesValidation = false;
+            this.close.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close.ForeColor = System.Drawing.Color.Black;
+            this.close.Location = new System.Drawing.Point(689, 0);
+            this.close.Name = "close";
+            this.close.Size = new System.Drawing.Size(21, 20);
+            this.close.TabIndex = 19;
+            this.close.Text = "X";
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // Changepasss
             // 
@@ -161,5 +180,6 @@
         private System.Windows.Forms.CheckBox sp;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label close;
     }
 }
