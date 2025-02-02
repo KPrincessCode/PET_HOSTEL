@@ -471,5 +471,15 @@ namespace PET_HOSTEL
                 MessageBox.Show($"Error: {ex.Message}\nStack Trace: {ex.StackTrace}");
             }
         }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Updatee_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

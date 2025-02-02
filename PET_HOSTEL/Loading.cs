@@ -26,7 +26,7 @@ namespace PET_HOSTEL
         {
             if (progressBar1.Value < 100)
             {
-                progressBar1.Value += 25;
+                progressBar1.Value += 1;
 
                 label2.Text = progressBar1.Value.ToString() + "%";
             }
