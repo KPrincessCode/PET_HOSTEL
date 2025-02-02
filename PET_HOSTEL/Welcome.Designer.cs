@@ -51,13 +51,14 @@ namespace PET_HOSTEL
             this.label7 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -65,8 +66,8 @@ namespace PET_HOSTEL
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -163,7 +164,7 @@ namespace PET_HOSTEL
             this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(968, 98);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(72, 17);
+            this.label14.Size = new System.Drawing.Size(83, 19);
             this.label14.TabIndex = 15;
             this.label14.Text = "23-50429-1";
             // 
@@ -174,7 +175,7 @@ namespace PET_HOSTEL
             this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(968, 69);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(146, 17);
+            this.label15.Size = new System.Drawing.Size(157, 19);
             this.label15.TabIndex = 14;
             this.label15.Text = "Md. Istiaq Mozumder ";
             this.label15.Click += new System.EventHandler(this.label15_Click);
@@ -197,7 +198,7 @@ namespace PET_HOSTEL
             this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(708, 98);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(72, 17);
+            this.label12.Size = new System.Drawing.Size(83, 19);
             this.label12.TabIndex = 12;
             this.label12.Text = "22-49133-3";
             // 
@@ -208,7 +209,7 @@ namespace PET_HOSTEL
             this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(708, 69);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(99, 17);
+            this.label13.Size = new System.Drawing.Size(108, 19);
             this.label13.TabIndex = 11;
             this.label13.Text = "Abu Jafar Sisty";
             // 
@@ -230,7 +231,7 @@ namespace PET_HOSTEL
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(403, 98);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 17);
+            this.label10.Size = new System.Drawing.Size(83, 19);
             this.label10.TabIndex = 9;
             this.label10.Text = "22-48391-3";
             // 
@@ -241,7 +242,7 @@ namespace PET_HOSTEL
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(403, 69);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(142, 17);
+            this.label11.Size = new System.Drawing.Size(153, 19);
             this.label11.TabIndex = 8;
             this.label11.Text = "Md. Naimur Rahman";
             // 
@@ -264,7 +265,7 @@ namespace PET_HOSTEL
             this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(164, 98);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 17);
+            this.label9.Size = new System.Drawing.Size(83, 19);
             this.label9.TabIndex = 6;
             this.label9.Text = "22-48370-3";
             // 
@@ -275,7 +276,7 @@ namespace PET_HOSTEL
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(164, 69);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 17);
+            this.label8.Size = new System.Drawing.Size(87, 19);
             this.label8.TabIndex = 5;
             this.label8.Text = "Nasir Sarkar";
             // 
@@ -296,7 +297,7 @@ namespace PET_HOSTEL
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(850, 85);
+            this.label7.Location = new System.Drawing.Point(830, 82);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(115, 18);
             this.label7.TabIndex = 5;
@@ -309,7 +310,7 @@ namespace PET_HOSTEL
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.Black;
-            this.label17.Location = new System.Drawing.Point(841, 233);
+            this.label17.Location = new System.Drawing.Point(821, 230);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(133, 18);
             this.label17.TabIndex = 10;
@@ -318,7 +319,7 @@ namespace PET_HOSTEL
             // pictureBox5
             // 
             this.pictureBox5.Image = global::PET_HOSTEL.Properties.Resources.GetUserImage;
-            this.pictureBox5.Location = new System.Drawing.Point(844, 105);
+            this.pictureBox5.Location = new System.Drawing.Point(824, 102);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(130, 126);
@@ -327,9 +328,21 @@ namespace PET_HOSTEL
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
+            this.pictureBox6.Location = new System.Drawing.Point(197, 77);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(152, 166);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox6.TabIndex = 11;
+            this.pictureBox6.TabStop = false;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
             this.panel3.Controls.Add(this.label4);
@@ -338,7 +351,19 @@ namespace PET_HOSTEL
             this.panel3.Location = new System.Drawing.Point(360, 77);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(443, 176);
-            this.panel3.TabIndex = 13;
+            this.panel3.TabIndex = 14;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.White;
+            this.label18.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.Black;
+            this.label18.Location = new System.Drawing.Point(48, 12);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(343, 18);
+            this.label18.TabIndex = 20;
+            this.label18.Text = "American International University-Bangladesh";
             // 
             // label6
             // 
@@ -346,10 +371,10 @@ namespace PET_HOSTEL
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(71, 20);
+            this.label6.Location = new System.Drawing.Point(68, 39);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(303, 18);
-            this.label6.TabIndex = 13;
+            this.label6.TabIndex = 19;
             this.label6.Text = "Course: Object Oriented Programming 2";
             this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -359,10 +384,10 @@ namespace PET_HOSTEL
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(112, 78);
+            this.label5.Location = new System.Drawing.Point(109, 94);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(220, 18);
-            this.label5.TabIndex = 12;
+            this.label5.TabIndex = 18;
             this.label5.Text = "System Name: Paws and Stay";
             // 
             // label4
@@ -371,10 +396,10 @@ namespace PET_HOSTEL
             this.label4.BackColor = System.Drawing.Color.White;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(58, 49);
+            this.label4.Location = new System.Drawing.Point(55, 66);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(328, 18);
-            this.label4.TabIndex = 11;
+            this.label4.TabIndex = 17;
             this.label4.Text = "Project Title: Pet Hostel Management System";
             // 
             // label3
@@ -383,10 +408,10 @@ namespace PET_HOSTEL
             this.label3.BackColor = System.Drawing.Color.White;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(183, 136);
+            this.label3.Location = new System.Drawing.Point(180, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 18);
-            this.label3.TabIndex = 10;
+            this.label3.TabIndex = 16;
             this.label3.Text = "Group: 02";
             // 
             // label1
@@ -395,22 +420,11 @@ namespace PET_HOSTEL
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(183, 107);
+            this.label1.Location = new System.Drawing.Point(121, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 18);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Section: F";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(163, 87);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(152, 166);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 11;
-            this.pictureBox6.TabStop = false;
+            this.label1.Size = new System.Drawing.Size(196, 18);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Section: F (Summer 23-24)";
             // 
             // Welcome
             // 
@@ -440,9 +454,9 @@ namespace PET_HOSTEL
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -471,12 +485,13 @@ namespace PET_HOSTEL
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox6;
     }
 }
