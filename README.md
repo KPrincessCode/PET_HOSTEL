@@ -1,60 +1,57 @@
 # Title
-The Pet Hostel Management System
+Pet Hostel Management System
 
 
 # Intodruction
 
-Pet Hostel Management System is a comprehensive application designed to simplify the management of a pet hostel. Developed using C# in Visual Studio, the system serves a dual purpose, meeting the needs of both users (pet owners) and administrators, thereby improving operational efficiency and user experience. The system has a user-friendly interface that simplifies the process of booking pet accommodations. Users can easily provide important information such as pet type, age, medical needs and length of stay in the user panel. Not only does it facilitate accurate pet care, but it also helps users make informed decisions based on their pet's specific requirements. The system is designed to handle a variety of payment methods, allowing users to pay conveniently through online card transactions or mobile banking options. Administrators play a vital role in the system as they are able to manage user registrations, monitor pet-related costs and maintain booking profiles. The administration panel allows administrators to efficiently add, update, delete and search user information, ensuring the accuracy and reliability of the information stored in the database. Additionally, they can set and change pet cost to reflect market changes, keeping rates fair and competitive.
+The Pet Hostel Management System is a C#-based project developed in Visual Studio to provide a seamless solution for pet owners who need temporary care for their pets. Whether the owner is traveling for work or on vacation, this system ensures that pets receive the necessary care and accommodations in a well-managed hostel environment.
 
-The Pet Hotel Management System guarantees a smooth experience from initial user registration and login to the final stages of pet reservation and payment processing. By providing a powerful platform for pet owners and caretakers, the project not only streamlines day-to-day operations, but also provides streamlined processes that facilitate better communication and service delivery. Overall, the system improves the operational efficiency of pet hostel, allowing users to more easily manage their pets' stays and enabling administrators to effectively monitor the facility.
+The system features a registration and login process, allowing users to create an account and manage their bookings. Through the User Panel, pet owners can input details such as pet type, stay duration, and medical requirements. Based on these details, the system calculates the total cost for the stay and provides two payment options: Card Payment and Mobile Banking. Upon successful payment, users receive a receipt with a unique token number for confirmation.
 
-
-
-
-# ER Diagram
-![ER_Project](https://github.com/user-attachments/assets/bb08b16e-0018-4556-b544-6a59abe42c2d)
-
-
-
+Additionally, the system includes an Admin Panel, enabling administrators to manage user details, modify pet care costs, and oversee bookings efficiently. This project aims to automate and streamline the pet boarding process, ensuring a convenient experience for both pet owners and hostel administrators.
 
 
 # Screenshots
 
-# 1. Welcome Page:
-![Screenshot (807)](https://github.com/user-attachments/assets/731f43cf-64e9-4383-bc07-a78f50392e46)
+# 1. Introductory Page:
+![welcome](https://github.com/user-attachments/assets/65b7d8ca-6046-40ed-b78c-6247de3a80fe)
 
 
 # 2. Loading Page:
-![Screenshot (832)](https://github.com/user-attachments/assets/fdb85028-b686-493e-afc9-aeb6bb2f3f5b)
+![loading](https://github.com/user-attachments/assets/617e941c-1a9f-4a7a-bde8-bbb06dd4cc8e)
 
 
 # 3. Login Page:
-![Screenshot (808)](https://github.com/user-attachments/assets/8d3cc9e9-c87b-4cc9-b40b-d5f9b34ea485)
+![login](https://github.com/user-attachments/assets/eb003c08-a134-4c32-a3c1-17ac846047a1)
 
 
 # 4. Registration Page:
-![Screenshot (810)](https://github.com/user-attachments/assets/c07b3525-3fac-4963-b182-deed126f3e6e)
+![registration](https://github.com/user-attachments/assets/ff43caa9-b25f-4f96-9ebd-d56d82e15486)
 
 
-# 5. Admin Panel:
-![Screenshot (809)](https://github.com/user-attachments/assets/0f974312-03c1-4d58-b904-4770ee29dd8d)
+# 5. Forget Password:
+![forget](https://github.com/user-attachments/assets/989b8a35-1ee2-4c09-8fdd-6607f0424e9a)
 
 
-# 6. User Panel:
-![Screenshot (822)](https://github.com/user-attachments/assets/e5434ee5-c7c0-4958-ad0d-f8ba733768c7)
+# 6. Change Password:
+![change](https://github.com/user-attachments/assets/fa457dfd-acdb-40b7-9534-8b88b975f3b1)
 
 
-# 7. Payment Methods:
-![Screenshot (814)](https://github.com/user-attachments/assets/fbe36f69-fe1e-4c42-83f8-97349f227a9c)
+# 7. Admin Panel:
+![admin](https://github.com/user-attachments/assets/4001f8a0-7c52-46e3-b1aa-98b59b1b7b87)
 
 
-# 8. Online Card Transaction:
-![Screenshot (824)](https://github.com/user-attachments/assets/3e38e91d-4bce-4ebd-87e1-5fddb6fbfe05)
+# 8. User Panel:
+![user](https://github.com/user-attachments/assets/e0338ebd-1f61-4c3e-82e7-33b7fbdaa001)
 
 
-# 9. Online Mobile Banking Transaction:
-![Screenshot (823)](https://github.com/user-attachments/assets/2ef9b72c-dca1-410b-85a2-7394a43fdb5e)
+# 9. Payment Methods:
+![methods](https://github.com/user-attachments/assets/f86a1899-7334-44a7-8a99-30d00c4f832e)
 
 
-# 10. Print to PDF:
-![Screenshot (834)](https://github.com/user-attachments/assets/5eeafbed-583a-483c-ba98-0ca8e468de02)
+# 10. Payment:
+![payment](https://github.com/user-attachments/assets/c596e1df-497a-47b5-973c-b99c5ab8f91b)
+
+
+# 11. Print to PDF:
+![print](https://github.com/user-attachments/assets/caca9f5d-4ecb-4b83-9cff-4122fc9aa559)
