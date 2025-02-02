@@ -245,6 +245,7 @@ namespace PET_HOSTEL
             catch (Exception ex)
             {
                 MessageBox.Show("Printed successfully.", "Sucess", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.Exit();
             }
             finally
             {
