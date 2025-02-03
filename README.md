@@ -46,7 +46,8 @@ Additionally, the system includes an Admin Panel, enabling administrators to man
 
 
 # 9. Payment Methods:
-![methods](https://github.com/user-attachments/assets/f86a1899-7334-44a7-8a99-30d00c4f832e)
+![methods](https://github.com/user-attachments/assets/41931f2e-e11e-46c6-a53a-339e6a94f3cf)
+
 
 
 # 10. Payment:
