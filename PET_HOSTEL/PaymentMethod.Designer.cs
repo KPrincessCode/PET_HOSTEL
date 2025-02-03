@@ -32,6 +32,7 @@ namespace PET_HOSTEL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentMethod));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.backBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,7 +43,6 @@ namespace PET_HOSTEL
             this.payPal = new System.Windows.Forms.PictureBox();
             this.masterCard = new System.Windows.Forms.PictureBox();
             this.visa = new System.Windows.Forms.PictureBox();
-            this.backBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upay)).BeginInit();
@@ -76,15 +76,32 @@ namespace PET_HOSTEL
             this.panel1.Size = new System.Drawing.Size(1165, 74);
             this.panel1.TabIndex = 8;
             // 
+            // backBtn
+            // 
+            this.backBtn.BackColor = System.Drawing.Color.White;
+            this.backBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.backBtn.FlatAppearance.BorderSize = 0;
+            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backBtn.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.backBtn.Location = new System.Drawing.Point(1125, 0);
+            this.backBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(40, 33);
+            this.backBtn.TabIndex = 45;
+            this.backBtn.Text = "X";
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label2.Location = new System.Drawing.Point(184, 179);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(575, 33);
+            this.label2.Size = new System.Drawing.Size(587, 33);
             this.label2.TabIndex = 9;
-            this.label2.Text = "We accept the following payment method:";
+            this.label2.Text = "We accept the following payment methods:";
             // 
             // label3
             // 
@@ -199,23 +216,6 @@ namespace PET_HOSTEL
             this.visa.TabIndex = 1;
             this.visa.TabStop = false;
             this.visa.Click += new System.EventHandler(this.visa_Click);
-            // 
-            // backBtn
-            // 
-            this.backBtn.BackColor = System.Drawing.Color.White;
-            this.backBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.backBtn.Location = new System.Drawing.Point(1125, 0);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(40, 33);
-            this.backBtn.TabIndex = 45;
-            this.backBtn.Text = "X";
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // PaymentMethod
             // 
