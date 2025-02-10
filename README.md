@@ -42,12 +42,11 @@ Additionally, the system includes an Admin Panel, enabling administrators to man
 
 
 # 8. User Panel:
-![user](https://github.com/user-attachments/assets/e0338ebd-1f61-4c3e-82e7-33b7fbdaa001)
+![user](https://github.com/user-attachments/assets/96c839fa-6e8c-41ce-8f62-6cd74b27ed36)
 
 
 # 9. Payment Methods:
-![methods](https://github.com/user-attachments/assets/41931f2e-e11e-46c6-a53a-339e6a94f3cf)
-
+![methods](https://github.com/user-attachments/assets/8755e824-1726-4e24-b44c-3047df4f4283)
 
 
 # 10. Payment:
