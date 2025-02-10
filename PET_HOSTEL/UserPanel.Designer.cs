@@ -121,7 +121,7 @@ namespace PET_HOSTEL
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 21);
             this.label3.TabIndex = 55;
-            this.label3.Text = "Injection Sattus:";
+            this.label3.Text = "Injection Status:";
             // 
             // injectionStatus
             // 

@@ -32,7 +32,6 @@ namespace PET_HOSTEL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PaymentMethod));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.backBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,6 +42,7 @@ namespace PET_HOSTEL
             this.payPal = new System.Windows.Forms.PictureBox();
             this.masterCard = new System.Windows.Forms.PictureBox();
             this.visa = new System.Windows.Forms.PictureBox();
+            this.btn_Back = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upay)).BeginInit();
@@ -68,30 +68,13 @@ namespace PET_HOSTEL
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Controls.Add(this.backBtn);
+            this.panel1.Controls.Add(this.btn_Back);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1165, 74);
             this.panel1.TabIndex = 8;
-            // 
-            // backBtn
-            // 
-            this.backBtn.BackColor = System.Drawing.Color.White;
-            this.backBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.backBtn.FlatAppearance.BorderSize = 0;
-            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backBtn.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.backBtn.Location = new System.Drawing.Point(1125, 0);
-            this.backBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(40, 33);
-            this.backBtn.TabIndex = 45;
-            this.backBtn.Text = "X";
-            this.backBtn.UseVisualStyleBackColor = false;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // label2
             // 
@@ -217,6 +200,20 @@ namespace PET_HOSTEL
             this.visa.TabStop = false;
             this.visa.Click += new System.EventHandler(this.visa_Click);
             // 
+            // btn_Back
+            // 
+            this.btn_Back.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btn_Back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Back.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Back.ForeColor = System.Drawing.Color.White;
+            this.btn_Back.Location = new System.Drawing.Point(1025, 15);
+            this.btn_Back.Name = "btn_Back";
+            this.btn_Back.Size = new System.Drawing.Size(109, 40);
+            this.btn_Back.TabIndex = 12;
+            this.btn_Back.Text = "Back";
+            this.btn_Back.UseVisualStyleBackColor = false;
+            this.btn_Back.Click += new System.EventHandler(this.btn_Back_Click);
+            // 
             // PaymentMethod
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -267,6 +264,6 @@ namespace PET_HOSTEL
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.Button btn_Back;
     }
 }

@@ -73,14 +73,8 @@ namespace PET_HOSTEL
             f.Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-            
-        }
 
-       
-        private void backBtn_Click(object sender, EventArgs e)
+        private void btn_Back_Click(object sender, EventArgs e)
         {
             UserPanel userpnl = new UserPanel(loggedInUsername);
             userpnl.Show();
