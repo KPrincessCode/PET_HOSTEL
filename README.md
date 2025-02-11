@@ -13,45 +13,45 @@ Additionally, the system includes an Admin Panel, enabling administrators to man
 
 # Screenshots
 
-# 1. Introductory Page:
+## 1. Introductory Page:
 ![welcome](https://github.com/user-attachments/assets/65b7d8ca-6046-40ed-b78c-6247de3a80fe)
 
 
-# 2. Loading Page:
+## 2. Loading Page:
 ![loading](https://github.com/user-attachments/assets/617e941c-1a9f-4a7a-bde8-bbb06dd4cc8e)
 
 
-# 3. Login Page:
+## 3. Login Page:
 ![login](https://github.com/user-attachments/assets/eb003c08-a134-4c32-a3c1-17ac846047a1)
 
 
-# 4. Registration Page:
+## 4. Registration Page:
 ![registration](https://github.com/user-attachments/assets/ff43caa9-b25f-4f96-9ebd-d56d82e15486)
 
 
-# 5. Forget Password:
+## 5. Forget Password:
 ![forget](https://github.com/user-attachments/assets/989b8a35-1ee2-4c09-8fdd-6607f0424e9a)
 
 
-# 6. Change Password:
+## 6. Change Password:
 ![change](https://github.com/user-attachments/assets/fa457dfd-acdb-40b7-9534-8b88b975f3b1)
 
 
-# 7. Admin Panel:
+## 7. Admin Panel:
 ![admin](https://github.com/user-attachments/assets/4001f8a0-7c52-46e3-b1aa-98b59b1b7b87)
 
 
-# 8. User Panel:
+## 8. User Panel:
 ![user](https://github.com/user-attachments/assets/96c839fa-6e8c-41ce-8f62-6cd74b27ed36)
 
 
-# 9. Payment Methods:
+## 9. Payment Methods:
 ![methods](https://github.com/user-attachments/assets/8755e824-1726-4e24-b44c-3047df4f4283)
 
 
-# 10. Payment:
-![payment](https://github.com/user-attachments/assets/c596e1df-497a-47b5-973c-b99c5ab8f91b)
+## 10. Payment:
+![payment](https://github.com/user-attachments/assets/ebc5fd1e-aeaa-45e1-b1be-db2206e76770)
 
 
-# 11. Print to PDF:
+## 11. Print to PDF:
 ![print](https://github.com/user-attachments/assets/caca9f5d-4ecb-4b83-9cff-4122fc9aa559)
