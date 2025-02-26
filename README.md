@@ -4,14 +4,14 @@ Pet Hostel Management System
 
 # Intodruction
 
-The Pet Hostel Management System is a C#-based project developed in Visual Studio to provide a reliable and efficient solution for pet owners who need temporary care for their pets. Whether the owner is traveling for work or on vacation, this system ensures that pets receive the necessary care and accommodations in a well-managed hostel environment.
+The Pet Hostel Management System is a C#-based project developed in Visual Studio using Windows Forms App (.NET Framework) to provide a reliable and efficient solution for pet owners who need temporary care for their pets. Whether the owner is traveling for work or on vacation, this system ensures that pets receive the necessary care and accommodations in a well-managed hostel environment.
 
 The system features a registration and login process, allowing users to create an account and manage their bookings. Through the User Panel, pet owners can input details such as pet type, stay duration, and medical requirements. Based on these details, the system calculates the total cost for the stay and provides two payment options: Card Payment and Mobile Banking. Upon successful payment, users receive a receipt with a unique token number for confirmation.
 
 Additionally, the system includes an Admin Panel, enabling administrators to manage user details, modify pet care costs, and oversee bookings efficiently. This project aims to automate and streamline the pet boarding process, ensuring a convenient experience for both pet owners and hostel administrators.
 
 
-# Screenshots
+# Showcase
 
 ## 1. Introductory Page:
 ![welcome](https://github.com/user-attachments/assets/65b7d8ca-6046-40ed-b78c-6247de3a80fe)
