@@ -1,32 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Text.RegularExpressions;
-
+using System.Windows.Forms;
 
 namespace PET_HOSTEL
 {
     public partial class AdminPanel : Form
     {
-
-
         private readonly string connectionString;
-
+        private int selectedUserId = -1;
 
         public AdminPanel()
         {
             InitializeComponent();
             DataAccess dataAccess = new DataAccess();
             connectionString = dataAccess.GetConnectionString();
+
             ShowAdminData();
+            LoadCostData();
+
+            dataGridView1.CellClick += dataGridView1_CellClick;
         }
+
         private void ShowAdminData()
         {
             try
@@ -34,15 +30,12 @@ namespace PET_HOSTEL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = "SELECT * FROM admin";
-                   
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                
                     DataTable table = new DataTable();
-                 
+
                     conn.Open();
-                 
                     adapter.Fill(table);
-                 
+
                     if (table.Rows.Count > 0)
                     {
                         dataGridView1.DataSource = table;
@@ -54,11 +47,10 @@ namespace PET_HOSTEL
                 }
             }
             catch (Exception ex)
-            {               
+            {
                 MessageBox.Show($"Error: {ex.Message}\nStack Trace: {ex.StackTrace}");
             }
         }
-
 
         private void LoadCostData()
         {
@@ -67,12 +59,10 @@ namespace PET_HOSTEL
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     string query = "SELECT * FROM cost";
-
                     SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
                     DataTable table = new DataTable();
 
                     conn.Open();
-
                     adapter.Fill(table);
 
                     if (table.Rows.Count > 0)
@@ -91,29 +81,56 @@ namespace PET_HOSTEL
             }
         }
 
-
-
         private bool IsValidEmail(string email)
         {
             string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(email, pattern);
         }
 
-      
-
-        private void AdminPanel_Load(object sender, EventArgs e)
-        {            
-            this.costTableAdapter.Fill(this.petHostel_DatabaseDataSet1.cost);          
-            this.adminTableAdapter.Fill(this.petHostel_DatabaseDataSet.admin);      
+        private void ClearUserFields()
+        {
+            selectedUserId = -1;
+            signup_email.Text = "";
+            signup_username.Text = "";
+            signup_password.Text = "";
+            signup_dob.Value = DateTime.Today;
+            txt_usertype.Text = "";
         }
 
+        private void AdminPanel_Load(object sender, EventArgs e)
+        {
+            this.costTableAdapter.Fill(this.petHostel_DatabaseDataSet1.cost);
+            this.adminTableAdapter.Fill(this.petHostel_DatabaseDataSet.admin);
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+
+            DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+
+            if (row.Cells["dataGridViewTextBoxColumn1"].Value != null &&
+                row.Cells["dataGridViewTextBoxColumn1"].Value != DBNull.Value)
+            {
+                selectedUserId = Convert.ToInt32(row.Cells["dataGridViewTextBoxColumn1"].Value);
+            }
+
+            signup_username.Text = row.Cells["dataGridViewTextBoxColumn2"].Value?.ToString() ?? "";
+            signup_email.Text = row.Cells["dataGridViewTextBoxColumn3"].Value?.ToString() ?? "";
+            signup_password.Text = row.Cells["passwordDataGridViewTextBoxColumn"].Value?.ToString() ?? "";
+            txt_usertype.Text = row.Cells["dataGridViewTextBoxColumn5"].Value?.ToString() ?? "";
+
+            if (row.Cells["dataGridViewTextBoxColumn4"].Value != null &&
+                row.Cells["dataGridViewTextBoxColumn4"].Value != DBNull.Value)
+            {
+                signup_dob.Value = Convert.ToDateTime(row.Cells["dataGridViewTextBoxColumn4"].Value);
+            }
+        }
 
         private void btn_Show_Click_1(object sender, EventArgs e)
         {
-        
             string username = txt_UsernameSearch.Text.Trim();
 
-             
             if (string.IsNullOrEmpty(username))
             {
                 MessageBox.Show("Please enter a username to search.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -126,154 +143,138 @@ namespace PET_HOSTEL
                 {
                     conn.Open();
 
-                    
                     string query = "SELECT * FROM admin WHERE username = @username";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        
                         cmd.Parameters.AddWithValue("@username", username);
 
-                       
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
 
-                       
                         dataGridView1.DataSource = dataTable;
 
-                       
-                        signup_email.Text = "";
                         txt_UsernameSearch.Text = "";
-                        signup_password.Text = "";
-                        signup_dob.Value = DateTime.Today;
-                        txt_usertype.Text = "";
+                        ClearUserFields();
                     }
                 }
             }
             catch (Exception ex)
             {
-               
                 MessageBox.Show("Error retrieving data: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-     
 
         private void btn_Refresh_Click_1(object sender, EventArgs e)
         {
             ShowAdminData();
             LoadCostData();
+            ClearUserFields();
         }
 
         private void btn_Uptate_Click_1(object sender, EventArgs e)
         {
-            if (signup_email.Text == "" || signup_username.Text == "")
+            if (selectedUserId == -1)
+            {
+                MessageBox.Show("Please select a user row first.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (signup_email.Text.Trim() == "" || signup_username.Text.Trim() == "")
             {
                 MessageBox.Show("Please enter a valid username and email to update.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+
+            try
             {
-                try
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    conn.Open();
+
+                    string updateQuery = @"UPDATE admin 
+                                           SET username = @newUsername,
+                                               email = @newEmail,
+                                               password = @newPassword,
+                                               dob = @newDob,
+                                               usertype = @newUsertype
+                                           WHERE id = @id";
+
+                    using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
                     {
-                        conn.Open();
+                        cmd.Parameters.AddWithValue("@id", selectedUserId);
+                        cmd.Parameters.AddWithValue("@newUsername", signup_username.Text.Trim());
+                        cmd.Parameters.AddWithValue("@newEmail", signup_email.Text.Trim());
+                        cmd.Parameters.AddWithValue("@newPassword", signup_password.Text.Trim());
+                        cmd.Parameters.AddWithValue("@newDob", signup_dob.Value);
 
-                        string updateQuery = "UPDATE admin SET email = @newEmail, password = @newPassword, dob = @newDob, usertype = @newUsertype WHERE username = @username";
+                        int newUsertype;
+                        if (int.TryParse(txt_usertype.Text.Trim(), out newUsertype))
+                            cmd.Parameters.AddWithValue("@newUsertype", newUsertype);
+                        else
+                            cmd.Parameters.AddWithValue("@newUsertype", 1);
 
-                        using (SqlCommand cmd = new SqlCommand(updateQuery, conn))
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
                         {
-                            cmd.Parameters.AddWithValue("@username", signup_username.Text.Trim());
-                            cmd.Parameters.AddWithValue("@newEmail", signup_email.Text.Trim());
-                            cmd.Parameters.AddWithValue("@newPassword", signup_password.Text.Trim());
-                            cmd.Parameters.AddWithValue("@newDob", signup_dob.Value);
-
-                            int newUsertype;
-                            if (int.TryParse(txt_usertype.Text.Trim(), out newUsertype))
-                            {
-                                cmd.Parameters.AddWithValue("@newUsertype", newUsertype);
-                            }
-                            else
-                            {
-                                cmd.Parameters.AddWithValue("@newUsertype", 1);
-                            }
-
-                            int rowsAffected = cmd.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
-                            {
-                                MessageBox.Show("User information updated successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                signup_email.Text = "";
-                                signup_username.Text = "";
-                                signup_password.Text = "";
-                                signup_dob.Value = DateTime.Today;
-                                txt_usertype.Text = "";
-
-                                ShowAdminData();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Update failed. User not found.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            MessageBox.Show("User information updated successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ShowAdminData();
+                            ClearUserFields();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Update failed. User not found.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error updating data: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating data: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void btn_Delete_Click_1(object sender, EventArgs e)
         {
-            if (signup_username.Text == "")
+            if (selectedUserId == -1)
             {
-                MessageBox.Show("Please enter a username to delete.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please select a user row first.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+
+            try
             {
-                try
+                using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    conn.Open();
+
+                    string deleteQuery = "DELETE FROM admin WHERE id = @id";
+
+                    using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
                     {
-                        conn.Open();
+                        cmd.Parameters.AddWithValue("@id", selectedUserId);
 
-                        string deleteQuery = "DELETE FROM admin WHERE username = @username";
+                        int rowsAffected = cmd.ExecuteNonQuery();
 
-                        using (SqlCommand cmd = new SqlCommand(deleteQuery, conn))
+                        if (rowsAffected > 0)
                         {
-                            cmd.Parameters.AddWithValue("@username", signup_username.Text.Trim());
-
-                            int rowsAffected = cmd.ExecuteNonQuery();
-
-                            if (rowsAffected > 0)
-                            {
-                                MessageBox.Show("User deleted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                                signup_email.Text = "";
-                                signup_username.Text = "";
-                                signup_password.Text = "";
-                                signup_dob.Value = DateTime.Today;
-                                txt_usertype.Text = "";
-
-                                ShowAdminData();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Delete failed. User not found.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
+                            MessageBox.Show("User deleted successfully.", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ShowAdminData();
+                            ClearUserFields();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Delete failed. User not found.", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error deleting data: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error deleting data: " + ex.Message, "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void signup_btn_Click_1(object sender, EventArgs e)
@@ -286,7 +287,6 @@ namespace PET_HOSTEL
             {
                 MessageBox.Show("Please enter a valid email address", "Error Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             else
             {
                 try
@@ -311,8 +311,8 @@ namespace PET_HOSTEL
                             }
                             else
                             {
-                                string insertData = "INSERT INTO admin (email, username, password, dob, usertype, date_created) " +
-                                    "VALUES(@email, @username, @pass, @dob, @usertype, @date)";
+                                string insertData = @"INSERT INTO admin (email, username, password, dob, usertype, date_created) 
+                                                      VALUES(@email, @username, @pass, @dob, @usertype, @date)";
 
                                 DateTime date = DateTime.Today;
 
@@ -326,26 +326,17 @@ namespace PET_HOSTEL
 
                                     int userType;
                                     if (int.TryParse(txt_usertype.Text.Trim(), out userType))
-                                    {
                                         cmd.Parameters.AddWithValue("@usertype", userType);
-                                    }
                                     else
-                                    {
                                         cmd.Parameters.AddWithValue("@usertype", 1);
-                                    }
 
                                     cmd.ExecuteNonQuery();
 
                                     MessageBox.Show("Registered successfully", "Information Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                                    signup_email.Text = "";
-                                    signup_username.Text = "";
-                                    signup_password.Text = "";
-                                    signup_dob.Value = DateTime.Today;
-                                    txt_usertype.Text = "";
-
-                                    signup_email.Focus();
                                     ShowAdminData();
+                                    ClearUserFields();
+                                    signup_email.Focus();
                                 }
                             }
                         }
@@ -357,25 +348,13 @@ namespace PET_HOSTEL
                 }
             }
         }
- 
 
         private void signup_showPass_CheckedChanged_1(object sender, EventArgs e)
         {
-            if (signup_showPass.Checked)
-            {
-                signup_password.PasswordChar = '\0';
-            }
-            else
-            {
-                signup_password.PasswordChar = '*';
-            }
+            signup_password.PasswordChar = signup_showPass.Checked ? '\0' : '*';
         }
 
-
-        private void signup_password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void signup_password_TextChanged(object sender, EventArgs e) { }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -384,22 +363,14 @@ namespace PET_HOSTEL
 
         private void Back_Click_1(object sender, EventArgs e)
         {
-            
             this.Hide();
             Login loginForm = new Login();
             loginForm.Show();
-            
         }
 
-        private void comboBox_petType_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        private void comboBox_petType_SelectedIndexChanged(object sender, EventArgs e) { }
 
-        }
-
-        private void textBox_Cost_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        private void textBox_Cost_TextChanged(object sender, EventArgs e) { }
 
         private void button_UpdateCost_Click(object sender, EventArgs e)
         {
@@ -472,14 +443,10 @@ namespace PET_HOSTEL
             }
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
+        private void label7_Click(object sender, EventArgs e) { }
 
-        }
+        private void btn_Updatee_Click(object sender, EventArgs e) { }
 
-        private void btn_Updatee_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
     }
 }

@@ -8,83 +8,93 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PET_HOSTEL.Properties {
-    
-    
+namespace PET_HOSTEL.Properties
+{
+
+
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.10.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
-        
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
+    {
+
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-        
-        public static Settings Default {
-            get {
+
+        public static Settings Default
+        {
+            get
+            {
                 return defaultInstance;
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\loginDataa.md" +
-            "f;Integrated Security=True;Connect Timeout=30")]
-        public string loginDataaConnectionString {
-            get {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\loginDataa.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string loginDataaConnectionString
+        {
+            get
+            {
                 return ((string)(this["loginDataaConnectionString"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\MSI\\OneDrive\\Documen" +
-            "ts\\loginDataa.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string loginDataaConnectionString1 {
-            get {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\MSI\\OneDrive\\Documents\\loginDataa.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string loginDataaConnectionString1
+        {
+            get
+            {
                 return ((string)(this["loginDataaConnectionString1"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\UserData.mdf;" +
-            "Integrated Security=True;Connect Timeout=30")]
-        public string UserDataConnectionString {
-            get {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\UserData.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string UserDataConnectionString
+        {
+            get
+            {
                 return ((string)(this["UserDataConnectionString"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DataInfo.mdf;" +
-            "Integrated Security=True;Connect Timeout=30")]
-        public string DataInfoConnectionString {
-            get {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DataInfo.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string DataInfoConnectionString
+        {
+            get
+            {
                 return ((string)(this["DataInfoConnectionString"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DatabasePetHo" +
-            "stel.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string DatabasePetHostelConnectionString {
-            get {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\DatabasePetHostel.mdf;Integrated Security=True;Connect Timeout=30")]
+        public string DatabasePetHostelConnectionString
+        {
+            get
+            {
                 return ((string)(this["DatabasePetHostelConnectionString"]));
             }
         }
-        
+
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\FINAL_PROJECT_Database\\Pet" +
-            "Hostel_Database.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string PetHostel_DatabaseConnectionString {
-            get {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\PetHostel_Database.mdf;Initial Catalog=PetHostel_Database_Kyle;Integrated Security=True;Connect Timeout=30")]
+        public string PetHostel_DatabaseConnectionString
+        {
+            get
+            {
                 return ((string)(this["PetHostel_DatabaseConnectionString"]));
             }
         }
