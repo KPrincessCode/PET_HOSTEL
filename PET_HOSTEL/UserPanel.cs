@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net.Http;
 
 namespace PET_HOSTEL
 {
@@ -145,6 +146,36 @@ namespace PET_HOSTEL
                 int rowsAffected = cmd.ExecuteNonQuery();
                 if (rowsAffected > 0)
                 {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        var data = new FormUrlEncodedContent(new[]
+{
+    new KeyValuePair<string, string>("pet_id", "2"),
+    new KeyValuePair<string, string>("owner_name", username.Text),
+    new KeyValuePair<string, string>("pet_type", petType.SelectedItem.ToString()),
+    new KeyValuePair<string, string>("service_type", "Boarding"),
+    new KeyValuePair<string, string>("medicine_needed", medicineNeeded.SelectedItem.ToString()),
+    new KeyValuePair<string, string>("injection_status", injectionStatus.SelectedItem.ToString()),
+    new KeyValuePair<string, string>("check_in_date", startDate.Value.ToString("yyyy-MM-dd")),
+    new KeyValuePair<string, string>("check_out_date", checkoutDate.Value.ToString("yyyy-MM-dd")),
+    new KeyValuePair<string, string>("payment_amount", totalAmount.ToString()),
+    new KeyValuePair<string, string>("payment_status", "unpaid"),
+    new KeyValuePair<string, string>("status", "Pending")
+});
+
+                        var response = client.PostAsync("http://127.0.0.1:8000/api/bookings", data).Result;
+
+                        if (response.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show("Booking sent to Laravel API!");
+                        }
+                        else
+                        {
+                            string error = response.Content.ReadAsStringAsync().Result;
+                            MessageBox.Show("Failed to send booking to API.\n" + error);
+                        }
+                    }
+
                     PaymentMethod z = new PaymentMethod(loggedInUsername);
                     z.Show();
                     this.Hide();
