@@ -8,6 +8,7 @@ namespace PET_HOSTEL
         private string loggedInUsername;
         private int bookingId;
         private decimal paymentAmount;
+        private Form previousForm;
 
         public PaymentMethod(string username)
         {
@@ -15,6 +16,7 @@ namespace PET_HOSTEL
             loggedInUsername = username;
             bookingId = 0;
             paymentAmount = 0;
+            previousForm = null;
         }
 
         public PaymentMethod(string username, int apiBookingId, decimal totalAmount)
@@ -23,11 +25,36 @@ namespace PET_HOSTEL
             loggedInUsername = username;
             bookingId = apiBookingId;
             paymentAmount = totalAmount;
+            previousForm = null;
+        }
+
+        public PaymentMethod(string username, int apiBookingId, decimal totalAmount, Form parentForm)
+        {
+            InitializeComponent();
+            loggedInUsername = username;
+            bookingId = apiBookingId;
+            paymentAmount = totalAmount;
+            previousForm = parentForm;
+        }
+
+        private void ReturnToUserPanel()
+        {
+            if (previousForm != null)
+            {
+                previousForm.Show();
+            }
+            else
+            {
+                UserPanel userpnl = new UserPanel(loggedInUsername);
+                userpnl.Show();
+            }
+
+            this.Hide();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            ReturnToUserPanel();
         }
 
         private void visa_Click(object sender, EventArgs e)
@@ -80,9 +107,7 @@ namespace PET_HOSTEL
 
         private void btn_Back_Click(object sender, EventArgs e)
         {
-            UserPanel userpnl = new UserPanel(loggedInUsername);
-            userpnl.Show();
-            this.Hide();
+            ReturnToUserPanel();
         }
     }
 }

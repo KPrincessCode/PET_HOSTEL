@@ -275,7 +275,7 @@ namespace PET_HOSTEL
                 SqlCommand cmd = new SqlCommand(query, connect);
                 cmd.ExecuteNonQuery();
 
-                Application.Exit();
+                this.Close();
             }
             catch (Exception ex)
             {

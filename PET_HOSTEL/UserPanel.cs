@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace PET_HOSTEL
 {
@@ -14,6 +16,22 @@ namespace PET_HOSTEL
 
         private string currentUsername;
         private string loggedInUsername;
+
+        public class ApiBooking
+        {
+            public int id { get; set; }
+            public int pet_id { get; set; }
+            public string owner_name { get; set; }
+            public string pet_type { get; set; }
+            public string service_type { get; set; }
+            public string medicine_needed { get; set; }
+            public string injection_status { get; set; }
+            public string check_in_date { get; set; }
+            public string check_out_date { get; set; }
+            public string payment_amount { get; set; }
+            public string payment_status { get; set; }
+            public string status { get; set; }
+        }
 
         public UserPanel(string username)
         {
@@ -126,6 +144,89 @@ namespace PET_HOSTEL
             return true;
         }
 
+        private string GetReadableBookingStatus(ApiBooking booking)
+        {
+            if (booking.payment_status == "unpaid")
+            {
+                return "Payment Required";
+            }
+
+            if (booking.payment_status == "paid" && booking.status == "Pending")
+            {
+                return "Waiting for approval";
+            }
+
+            if (booking.status == "Approved")
+            {
+                return "Accepted";
+            }
+
+            if (booking.status == "Rejected")
+            {
+                return "Rejected";
+            }
+
+            return booking.status;
+        }
+
+        private void LoadLatestBookingStatus()
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    var response = client.GetAsync("http://127.0.0.1:8000/api/bookings").Result;
+                    string json = response.Content.ReadAsStringAsync().Result;
+
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Failed to load booking status from API.\n" + json);
+                        return;
+                    }
+
+                    var bookings = JsonConvert.DeserializeObject<List<ApiBooking>>(json);
+
+                    if (bookings == null || bookings.Count == 0)
+                    {
+                        MessageBox.Show("No bookings found from API.");
+                        return;
+                    }
+
+                    var latestBooking = bookings
+                        .Where(b => b.owner_name == loggedInUsername)
+                        .OrderByDescending(b => b.id)
+                        .FirstOrDefault();
+
+                    if (latestBooking == null)
+                    {
+                        MessageBox.Show("No booking found for this user.");
+                        return;
+                    }
+
+                    string readableStatus = GetReadableBookingStatus(latestBooking);
+
+                    MessageBox.Show(
+                        "Latest Booking Status\n\n" +
+                        "Booking ID: " + latestBooking.id + "\n" +
+                        "Pet Type: " + latestBooking.pet_type + "\n" +
+                        "Service: " + latestBooking.service_type + "\n" +
+                        "Check-in: " + latestBooking.check_in_date + "\n" +
+                        "Check-out: " + latestBooking.check_out_date + "\n" +
+                        "Amount: " + latestBooking.payment_amount + "\n" +
+                        "Payment Status: " + latestBooking.payment_status + "\n" +
+                        "Booking Status: " + readableStatus,
+                        "Booking Status",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading booking status: " + ex.Message);
+            }
+        }
+
         private void button_Next_Click(object sender, EventArgs e)
         {
             if (!isTotalChecked)
@@ -212,7 +313,7 @@ namespace PET_HOSTEL
                         }
                     }
 
-                    PaymentMethod paymentForm = new PaymentMethod(loggedInUsername, apiBookingId, totalAmount);
+                    PaymentMethod paymentForm = new PaymentMethod(loggedInUsername, apiBookingId, totalAmount, this);
                     paymentForm.Show();
                     this.Hide();
                 }
@@ -312,6 +413,11 @@ namespace PET_HOSTEL
             isTotalChecked = true;
         }
 
+        private void button_CheckBookingStatus_Click(object sender, EventArgs e)
+        {
+            LoadLatestBookingStatus();
+        }
+
         private void label2_Click(object sender, EventArgs e) { }
         private void username_SelectedIndexChanged(object sender, EventArgs e) { }
         private void username_TextChanged(object sender, EventArgs e) { }
@@ -320,5 +426,10 @@ namespace PET_HOSTEL
         private void button_TotalAmount_Click(object sender, EventArgs e) { }
         private void label_Check_Click(object sender, EventArgs e) { }
         private void label9_Click(object sender, EventArgs e) { }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
