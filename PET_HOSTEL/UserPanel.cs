@@ -17,6 +17,8 @@ namespace PET_HOSTEL
         private string currentUsername;
         private string loggedInUsername;
 
+        private const string ApiBaseUrl = "http://127.0.0.1:8000/api";
+
         public class ApiBooking
         {
             public int id { get; set; }
@@ -31,13 +33,17 @@ namespace PET_HOSTEL
             public string payment_amount { get; set; }
             public string payment_status { get; set; }
             public string status { get; set; }
+            public string admin_notes { get; set; }
+            public string boarding_status { get; set; }
         }
 
         public UserPanel(string username)
         {
             InitializeComponent();
+
             DataAccess dataAccess = new DataAccess();
             connect = new SqlConnection(dataAccess.GetConnectionString());
+
             currentUsername = username;
             loggedInUsername = username;
         }
@@ -47,24 +53,26 @@ namespace PET_HOSTEL
             username.Text = loggedInUsername;
         }
 
-        private int GetPetCostFromDatabase(string petType)
+        private int GetPetCostFromDatabase(string petTypeValue)
         {
             int cost = 0;
 
             try
             {
                 connect.Open();
-                string query = $"SELECT {petType.ToLower()}_cost FROM cost";
+
+                string query = $"SELECT {petTypeValue.ToLower()}_cost FROM cost";
                 SqlCommand cmd = new SqlCommand(query, connect);
 
                 object result = cmd.ExecuteScalar();
+
                 if (result != null)
                 {
                     cost = Convert.ToInt32(result);
                 }
                 else
                 {
-                    MessageBox.Show($"No cost found for {petType}. Using default value.");
+                    MessageBox.Show($"No cost found for {petTypeValue}. Using default value.");
                 }
             }
             catch (Exception ex)
@@ -79,15 +87,50 @@ namespace PET_HOSTEL
             return cost;
         }
 
-        private int ExtractBookingIdFromJson(string json)
+        private int ExtractIdFromJson(string json)
         {
-            Match match = Regex.Match(json, "\"id\"\\s*:\\s*(\\d+)");
-            if (match.Success)
+            if (string.IsNullOrWhiteSpace(json))
             {
-                return Convert.ToInt32(match.Groups[1].Value);
+                return 0;
+            }
+
+            Match bookingIdMatch = Regex.Match(json, "\"booking_id\"\\s*:\\s*(\\d+)");
+            if (bookingIdMatch.Success)
+            {
+                return Convert.ToInt32(bookingIdMatch.Groups[1].Value);
+            }
+
+            Match idMatch = Regex.Match(json, "\"id\"\\s*:\\s*(\\d+)");
+            if (idMatch.Success)
+            {
+                return Convert.ToInt32(idMatch.Groups[1].Value);
             }
 
             return 0;
+        }
+
+        private int ConvertAgeToNumber(string selectedAge)
+        {
+            switch (selectedAge)
+            {
+                case "Up to 5 months":
+                    return 0;
+
+                case "Up to 1 year":
+                    return 1;
+
+                case "Up to 3 years":
+                    return 3;
+
+                case "Up to 5 years":
+                    return 5;
+
+                case "More than 5 years":
+                    return 6;
+
+                default:
+                    return 1;
+            }
         }
 
         private int ComputeTotalAmount()
@@ -132,6 +175,7 @@ namespace PET_HOSTEL
         private bool IsFormValid()
         {
             if (string.IsNullOrEmpty(username.Text) ||
+                string.IsNullOrWhiteSpace(petName.Text) ||
                 petType.SelectedIndex == -1 ||
                 age.SelectedIndex == -1 ||
                 injectionStatus.SelectedIndex == -1 ||
@@ -141,7 +185,91 @@ namespace PET_HOSTEL
                 return false;
             }
 
+            if (checkoutDate.Value.Date < startDate.Value.Date)
+            {
+                MessageBox.Show("Checkout date must not be earlier than start date.");
+                return false;
+            }
+
             return true;
+        }
+
+        private bool HasActiveBooking()
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    var response = client.GetAsync(ApiBaseUrl + "/bookings").Result;
+                    string json = response.Content.ReadAsStringAsync().Result;
+
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Failed to check active bookings.\n" + json);
+                        return true;
+                    }
+
+                    var bookings = JsonConvert.DeserializeObject<List<ApiBooking>>(json);
+
+                    if (bookings == null)
+                    {
+                        return false;
+                    }
+
+                    return bookings.Any(b =>
+                        b.owner_name == loggedInUsername &&
+                        (
+                            string.Equals(b.status, "Pending", StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(b.status, "Approved", StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(b.status, "Checked In", StringComparison.OrdinalIgnoreCase) ||
+                            string.Equals(b.status, "checked_in", StringComparison.OrdinalIgnoreCase)
+                        )
+                    );
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cannot check active booking. Make sure Laravel API is running.\n" + ex.Message);
+                return true;
+            }
+        }
+
+        private int CreatePetProfileInApi()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string selectedPetType = petType.SelectedItem.ToString();
+                string selectedAge = age.SelectedItem.ToString();
+
+                var petData = new FormUrlEncodedContent(new[]
+{
+    new KeyValuePair<string, string>("name", petName.Text.Trim()),
+    new KeyValuePair<string, string>("type", selectedPetType),
+    new KeyValuePair<string, string>("age", ConvertAgeToNumber(selectedAge).ToString()),
+    new KeyValuePair<string, string>("medicine_needed", medicineNeeded.SelectedItem.ToString()),
+    new KeyValuePair<string, string>("injection_status", injectionStatus.SelectedItem.ToString()),
+    new KeyValuePair<string, string>("owner_name", loggedInUsername)
+});
+
+                var response = client.PostAsync(ApiBaseUrl + "/pets", petData).Result;
+                string apiResult = response.Content.ReadAsStringAsync().Result;
+
+                if (!response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Failed to create pet profile in API.\n" + apiResult);
+                    return 0;
+                }
+
+                int petId = ExtractIdFromJson(apiResult);
+
+                if (petId == 0)
+                {
+                    MessageBox.Show("Pet profile created, but pet ID was not detected.\n" + apiResult);
+                    return 0;
+                }
+
+                return petId;
+            }
         }
 
         private string GetReadableBookingStatus(ApiBooking booking)
@@ -169,13 +297,23 @@ namespace PET_HOSTEL
             return booking.status;
         }
 
+        private string GetReadableAdminNotes(ApiBooking booking)
+        {
+            if (string.IsNullOrWhiteSpace(booking.admin_notes))
+            {
+                return "No admin notes yet.";
+            }
+
+            return booking.admin_notes;
+        }
+
         private void LoadLatestBookingStatus()
         {
             try
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    var response = client.GetAsync("http://127.0.0.1:8000/api/bookings").Result;
+                    var response = client.GetAsync(ApiBaseUrl + "/bookings").Result;
                     string json = response.Content.ReadAsStringAsync().Result;
 
                     if (!response.IsSuccessStatusCode)
@@ -204,6 +342,7 @@ namespace PET_HOSTEL
                     }
 
                     string readableStatus = GetReadableBookingStatus(latestBooking);
+                    string adminNotes = GetReadableAdminNotes(latestBooking);
 
                     MessageBox.Show(
                         "Latest Booking Status\n\n" +
@@ -214,7 +353,8 @@ namespace PET_HOSTEL
                         "Check-out: " + latestBooking.check_out_date + "\n" +
                         "Amount: " + latestBooking.payment_amount + "\n" +
                         "Payment Status: " + latestBooking.payment_status + "\n" +
-                        "Booking Status: " + readableStatus,
+                        "Booking Status: " + readableStatus + "\n" +
+                        "Admin Notes: " + adminNotes,
                         "Booking Status",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information
@@ -237,6 +377,12 @@ namespace PET_HOSTEL
 
             if (!IsFormValid())
             {
+                return;
+            }
+
+            if (HasActiveBooking())
+            {
+                MessageBox.Show("You cannot book again yet. Your pet still has an active booking and must be checked out first.");
                 return;
             }
 
@@ -272,13 +418,20 @@ namespace PET_HOSTEL
 
                 if (rowsAffected > 0)
                 {
+                    int petId = CreatePetProfileInApi();
+
+                    if (petId == 0)
+                    {
+                        return;
+                    }
+
                     int apiBookingId = 0;
 
                     using (HttpClient client = new HttpClient())
                     {
                         var data = new FormUrlEncodedContent(new[]
                         {
-                            new KeyValuePair<string, string>("pet_id", "2"),
+                            new KeyValuePair<string, string>("pet_id", petId.ToString()),
                             new KeyValuePair<string, string>("owner_name", username.Text),
                             new KeyValuePair<string, string>("pet_type", petType.SelectedItem.ToString()),
                             new KeyValuePair<string, string>("service_type", "Boarding"),
@@ -291,20 +444,20 @@ namespace PET_HOSTEL
                             new KeyValuePair<string, string>("status", "Pending")
                         });
 
-                        var response = client.PostAsync("http://127.0.0.1:8000/api/bookings", data).Result;
+                        var response = client.PostAsync(ApiBaseUrl + "/bookings", data).Result;
                         string apiResult = response.Content.ReadAsStringAsync().Result;
 
                         if (response.IsSuccessStatusCode)
                         {
-                            apiBookingId = ExtractBookingIdFromJson(apiResult);
+                            apiBookingId = ExtractIdFromJson(apiResult);
 
                             if (apiBookingId == 0)
                             {
-                                MessageBox.Show("Booking sent to API, but booking ID was not detected.");
+                                MessageBox.Show("Booking sent to API, but booking ID was not detected.\n" + apiResult);
                                 return;
                             }
 
-                            MessageBox.Show("Booking sent to Laravel API!");
+                            MessageBox.Show("Booking created successfully. Please proceed to payment.");
                         }
                         else
                         {
@@ -334,7 +487,8 @@ namespace PET_HOSTEL
 
         private void button_Clear_Click(object sender, EventArgs e)
         {
-            username.Text = string.Empty;
+            username.Text = loggedInUsername;
+            petName.Text = string.Empty;
             petType.SelectedIndex = -1;
             age.SelectedIndex = -1;
             injectionStatus.SelectedIndex = -1;
@@ -349,6 +503,7 @@ namespace PET_HOSTEL
             try
             {
                 connect.Open();
+
                 string query = "UPDATE admin SET login_status = 0 WHERE username = @username";
                 SqlCommand cmd = new SqlCommand(query, connect);
                 cmd.Parameters.AddWithValue("@username", username.Text);
@@ -386,6 +541,7 @@ namespace PET_HOSTEL
                 cmd.Parameters.AddWithValue("@username", username.Text);
 
                 var result = cmd.ExecuteScalar();
+
                 if (result != null)
                 {
                     loginStatus = Convert.ToInt32(result);
@@ -426,10 +582,6 @@ namespace PET_HOSTEL
         private void button_TotalAmount_Click(object sender, EventArgs e) { }
         private void label_Check_Click(object sender, EventArgs e) { }
         private void label9_Click(object sender, EventArgs e) { }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void pictureBox2_Click(object sender, EventArgs e) { }
     }
 }
